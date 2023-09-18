@@ -13,24 +13,21 @@ private:
 public:
     Stack() : top(nullptr) {}
 
-    // Push operation to insert a number to the top of the stack
     void push(int x) {
         Node* newNode = new Node(x);
         newNode->next = top;
         top = newNode;
     }
 
-    // Pop operation to remove the element at the top of the stack
     void pop() {
         if (top == nullptr) {
-            return; // Stack is empty, nothing to pop
+            return;
         }
         Node* temp = top;
         top = top->next;
         delete temp;
     }
 
-    // Function to display the resulting stack
     void display() {
         Node* current = top;
         while (current != nullptr) {

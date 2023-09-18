@@ -14,7 +14,6 @@ private:
 public:
     Queue() : front(nullptr), rear(nullptr) {}
 
-    // Enqueue operation to insert a number at the tail of the queue
     void enqueue(int x) {
         Node* newNode = new Node(x);
         if (rear == nullptr) {
@@ -25,20 +24,18 @@ public:
         }
     }
 
-    // Dequeue operation to remove the element at the head of the queue
     void dequeue() {
         if (front == nullptr) {
-            return; // Queue is empty, nothing to dequeue
+            return;
         }
         Node* temp = front;
         front = front->next;
         delete temp;
         if (front == nullptr) {
-            rear = nullptr; // Queue is empty after dequeue
+            rear = nullptr;
         }
     }
 
-    // Function to display the resulting queue
     void display() {
         Node* current = front;
         while (current != nullptr) {

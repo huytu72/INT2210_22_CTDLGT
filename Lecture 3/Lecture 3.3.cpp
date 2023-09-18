@@ -15,7 +15,6 @@ private:
 public:
     DoublyLinkedList() : head(nullptr), tail(nullptr) {}
 
-    // Function to insert a node at the end of the doubly linked list
     void insert(int x) {
         Node* newNode = new Node(x);
         if (tail == nullptr) {
@@ -28,10 +27,9 @@ public:
         }
     }
 
-    // Function to count triplets with sum equal to zero
     int count_triplets() {
         if (head == nullptr || head->next == nullptr || head->next->next == nullptr) {
-            return 0; // Not enough elements to form triplets
+            return 0;
         }
 
         int count = 0;

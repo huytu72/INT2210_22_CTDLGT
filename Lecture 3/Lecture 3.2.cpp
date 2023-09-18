@@ -20,7 +20,6 @@ private:
 public:
     LinkedList() : head(NULL) {}
 
-    // Insert a node at position p with value x
     void insert(int p, int x) {
         Node* newNode = makeNode(x);
         if (p == 0 || head == NULL) {
@@ -38,10 +37,9 @@ public:
         }
     }
 
-    // Delete a node at position p
     void remove(int p) {
         if (head == NULL) {
-            return; // List is empty, nothing to delete
+            return;
         }
         if (p == 0) {
             Node* temp = head;
@@ -55,7 +53,7 @@ public:
                 pos++;
             }
             if (current->next == NULL) {
-                return; // Position p is out of bounds
+                return;
             }
             Node* temp = current->next;
             current->next = temp->next;
@@ -63,7 +61,6 @@ public:
         }
     }
 
-    // Print the linked list
     void print() {
         Node* current = head;
         while (current != NULL) {
